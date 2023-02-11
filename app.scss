@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$roboto:'roboto';
+$cursive_font:'satisfy';
+$round:'valera round';
+$cta:red;
+$bg:black;
+$light_bg:black;
+$text:black;
+$white:white;
+
+body{
+    width:100%;
+    height:100%;
+    position:relative;
+    font-family: $round;
+}
+.dflex{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+.container{
+    display:flex;
+    flex-direction: column;
+    width:100px;
+    height:100px;
+    padding: 30px 50px 20px 50px;
+    box-sizing:border-box;
+    background-color: $bg;
+}
+
+.nav{
+    @extend .dflex;
+    justify-content:space-between;
+    width:100px;
+    color:$white;
+    .logo{
+        font-size:30px;
+        text-transform:uppercase;
+    }
+     ul{
+        @extend .dflex;
+        margin:0;
+        padding:0;
+        list-style-type:none;
+        li{
+            font-size: 14px;
+            margin-left:15px;
+            padding:10px;
+            box-sizing: border-box;
+            color:rgba($white, .7);
+            cursor:pointer;
+
+        }
+     }
+     .search{
+        color:rgba($white, .7);
+        .fa{
+            cursor:pointer;
+            +.fa{
+                margin-left:15px;
+
+            }
+        }
+     }
+}
+.main_content{
+    @extend  .dflex;
+     position:relative;
+     width:70px;
+     height:100px;
+     margin: 50px auto;
+     padding:50px 0 0;
+     box-sizing: border-box;
+     justify-content: space-between;
+     flex-wrap: wrap ;
+     h3{
+        position:absolute;
+        left:0;
+        top:0;
+        color:$text;
+        font-size:10.5ww;
+     }
+     .card{
+        width:30%;
+        border-radius:15px;
+        @extend .dflex;
+        flex-direction:column;
+        position:relative;
+        transform:scale(.8);
+        transition: all .3s ease-in-out;
+        margin-bottom:50px;
+        .card_image{
+            margin-top:-5ww;
+            img{
+                width:200px;
+
+            }
+
+        }
+        .card_header{
+            @extend .dflex;
+            flex-direction:column;
+            color:$white;
+            margin:25px 0;
+            h2{
+                font-size:18px;
+            }
+            p{
+                font-size:14px;
+                text-align:center;
+                color:rgba($white, .3);
+                margin:8px 0;
+            }
+            .price{
+                font-size:15px;
+                color:$cta;
+                span{
+                    font-size:15px;
+                    display:inline-block;
+                    vertical-align:top;
+                }
+            }
+        }
+        .card_hover{
+            background-color:$light_bg;
+            transform:scale(1.1);
+            cursor:pointer;
+        }
+        .card_hover{
+            .btn:{
+            background-color:$cta;
+            color:$white;
+            }
+     }
+}
+.btn{
+    width:130px;
+    height:35px;
+    font-size:14px;
+    background-color:$text;
+    color:rgba($white, .5);
+    @extend .dflex;
+    cursor:pointer;
+    position:relative;
+    transition:background-color .3s ease;
+    overflow:hidden;
+}
+ 
+.footer{
+    @extend .dflex;
+    width:100%;
+    justify-content: space-between;
+    margin-top:auto;
+    color:rgba($white, .3);
+    font-size:12px;
+    .social{
+        @extend  .dflex;
+        .fa{
+            width:50px;
+            height:50px;
+            border-radius:50px;
+            border:1px solid rgba($white, .3);
+            @extend .dflex;
+            font-size:14px;
+            color:rgba($white, .3);
+            cursor:pointer;
+            +.fa{
+                margin-left:15px;
+            }
+
+
+        }
+    }
+
+}
